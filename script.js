@@ -17,21 +17,23 @@
 // STEP 1: Create an array called "colors" with exactly
 //         three strings: "red", "green", "blue"
 //         Use let to declare it.
-
+let colors = ["red", "green", "blue"];
 // STEP 2: Use a for loop to print each color.
 //         Each line should say exactly:
 //         "Color: red"
 //         "Color: green"
 //         "Color: blue"
 //         Use: console.log("Color: " + colors[i])
-
+for (let i=0; i<colors.length; i++) {
+    console.log("Color: " + colors[i]);
+}
 
 // ============================================
 //  MAIN: Number Analyzer
 // ============================================
 // Collect 5 numbers from the user, store them in an array,
 // then calculate and display statistics.
-
+let numbers = []
 // STEP 3: Create an empty array called "numbers" using let.
 //         let numbers = [];
 
@@ -40,7 +42,9 @@
 //         a) Use prompt() to ask "Enter number " + (i + 1)
 //         b) Use parseFloat() to convert the input to a number
 //         c) Use .push() to add the number to the array
-
+for (let i=0; i<5; i++) {
+    numbers.push(parseFloat(prompt("Enter number " + (i + 1))));
+}
 // STEP 5: Print all the numbers on one line.
 //         Build a string by looping through the array.
 //         Separate each number with ", " (comma and space).
@@ -50,22 +54,44 @@
 //         HINT: Start with an empty string. In the loop,
 //         add the number. If it's not the last number,
 //         also add ", " after it.
-
+let str = "Numbers: ";
+for (let i=0; i<numbers.length; i++) {
+    str += numbers[i];
+    if (i != numbers.length)
+        str += ", ";
+}
+console.log(str);
 // STEP 6: Calculate the sum of all numbers.
 //         Use a for loop to add each number to a running total.
 //         Print: console.log("Sum: " + sum)
-
+let summ = 0;
+for (let i=0; i<numbers.length; i++) {
+    summ += numbers[i];
+}
+console.log("Sum: " + summ);
 // STEP 7: Calculate the average.
 //         Average = sum / numbers.length
 //         Print: console.log("Average: " + average)
 //         (No rounding needed)
-
+summ /= numbers.length;
+console.log("Average: " + summ);
 // STEP 8: Count how many numbers are even.
 //         A number is even if number % 2 equals 0.
 //         Use a for loop and an if statement.
 //         Print: console.log("Even count: " + count)
-
+let even = 0;
+for (let i=0; i<numbers.length; i++) {
+    if (numbers[i] % 2 == 0)
+        even++;
+}
+console.log("Even count: " + even);
 // STEP 9: Find the largest number.
 //         Start with the first number as the largest.
 //         Loop through the rest and update if you find a bigger one.
 //         Print: console.log("Largest: " + largest)
+let large = 0;
+for (let i=0; i<numbers.length; i++) {
+    if (numbers[i] > large)
+        large = numbers[i];
+}
+console.log("Largest: " + large);
