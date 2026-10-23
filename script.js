@@ -57,7 +57,7 @@ for (let i=0; i<5; i++) {
 let str = "Numbers: ";
 for (let i=0; i<numbers.length; i++) {
     str += numbers[i];
-    if (i != numbers.length)
+    if (i != numbers.length-1)
         str += ", ";
 }
 console.log(str);
